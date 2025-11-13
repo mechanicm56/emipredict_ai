@@ -26,14 +26,14 @@ def load_model():
         clf_model = None
    
     try:
-        reg_url = f"https://drive.google.com/uc?id={clf_id}"
+        reg_url = f"https://drive.google.com/uc?id={reg_id}"
         gdown.download(reg_url, reg_name, quiet=False)
         clf_model = joblib.load(reg_name)
     except FileNotFoundError:
         reg_model = None
 
     try:
-        slc_url = f"https://drive.google.com/uc?id={clf_id}"
+        slc_url = f"https://drive.google.com/uc?id={slc_id}"
         gdown.download(slc_url, slc_name, quiet=False)
         scaler = joblib.load(slc_name)
     except FileNotFoundError:
